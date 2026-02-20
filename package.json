@@ -51,6 +51,7 @@
 		"@tsconfig/node24": "^24.0.4",
 		"@types/node": "^24.10.13",
 		"@types/turndown": "^5.0.6",
+		"lefthook": "^2.1.1",
 		"semantic-release": "^25.0.3",
 		"typescript": "^5.9.3"
 	}

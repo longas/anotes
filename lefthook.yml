@@ -1,0 +1,7 @@
+pre-commit:
+  commands:
+    typecheck:
+      run: npm run typecheck
+    fix:
+      run: npm run fix
+      stage_fixed: true
