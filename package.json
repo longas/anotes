@@ -5,7 +5,7 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/longas/anotes.git"
+		"url": "git+https://github.com/longas/anotes.git"
 	},
 	"homepage": "https://github.com/longas/anotes#readme",
 	"bugs": "https://github.com/longas/anotes/issues",
@@ -24,7 +24,7 @@
 	],
 	"type": "module",
 	"bin": {
-		"anotes": "./bin/anotes.js"
+		"anotes": "bin/anotes.js"
 	},
 	"files": [
 		"bin",
