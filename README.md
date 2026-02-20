@@ -7,27 +7,11 @@ A command-line interface for managing Apple Notes on macOS. Designed for AI agen
 - macOS (uses JXA/osascript to talk to Notes.app)
 - Node.js 24+
 
-## Setup
+## Install
 
 ```bash
-# Install dependencies
-npm install
-
-# Compile TypeScript
-npm run build
-
-# Make `anotes` available globally
-mkdir -p ~/.local/bin
-ln -sf "$(pwd)/bin/anotes.js" ~/.local/bin/anotes
+npm install -g anotes
 ```
-
-Add `~/.local/bin` to your PATH if it isn't already. Append this to your shell profile (`~/.zshrc` or `~/.bashrc`):
-
-```bash
-export PATH="$HOME/.local/bin:$PATH"
-```
-
-Then reload your shell (`source ~/.zshrc`) or open a new terminal.
 
 ## Usage
 
@@ -39,20 +23,20 @@ anotes note --help
 anotes folder --help
 ```
 
-## Agent Integration (Claude Code)
+## Agent Integration
 
-To let Claude Code use the `anotes` CLI as a skill, copy the `skill/` folder into your project's `.claude/skills/` directory (or wherever your agent loads skills from):
+anotes ships with a [skill file](skill/SKILL.md) that teaches an AI agent the full command reference, output formats, and typical workflows. Once loaded, the agent can create, read, edit, search, and organize Apple Notes via bash commands.
+
+Copy the skill into your agent's skills directory so it's available across all your projects:
+
+### Claude Code
 
 ```bash
-cp -r /path/to/anotes/skill .claude/skills/anotes
+cp "$(npm root -g)/anotes/skill/SKILL.md" ~/.claude/skills/anotes/SKILL.md
 ```
 
-The skill file at `skill/SKILL.md` teaches the agent the full command reference, output formats, and typical workflows. Once loaded, the agent can create, read, edit, search, and organize Apple Notes via bash commands.
-
-## Development
+### Codex
 
 ```bash
-npm run build       # Compile TypeScript
-npm run typecheck   # Type-check without emitting
-npm run fix         # Lint and format with Biome
+cp "$(npm root -g)/anotes/skill/SKILL.md" ~/.codex/skills/anotes/SKILL.md
 ```
