@@ -31,8 +31,8 @@ jobs:
       - name: Install dependencies
         run: npm clean-install
 
-      - name: Build
-        run: npm run build
+      - name: Verify the integrity of provenance attestations and registry signatures
+        run: npm audit signatures
 
       - name: Release
         env:
