@@ -29,7 +29,7 @@ jobs:
           node-version-file: ".nvmrc"
 
       - name: Install dependencies
-        run: npm clean-install --ignore-platform
+        run: npm clean-install --os=darwin
 
       - name: Verify the integrity of provenance attestations and registry signatures
         run: npm audit signatures
