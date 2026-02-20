@@ -25,7 +25,8 @@
 	},
 	"files": [
 		"bin",
-		"dist"
+		"dist",
+		"skill"
 	],
 	"scripts": {
 		"build": "tsc",
