@@ -32,11 +32,11 @@ Copy the skill into your agent's skills directory so it's available across all y
 ### Claude Code
 
 ```bash
-cp "$(npm root -g)/anotes/skill/SKILL.md" ~/.claude/skills/anotes/SKILL.md
+mkdir -p ~/.claude/skills/anotes && cp "$(npm root -g)/anotes/skill/SKILL.md" ~/.claude/skills/anotes/SKILL.md
 ```
 
 ### Codex
 
 ```bash
-cp "$(npm root -g)/anotes/skill/SKILL.md" ~/.codex/skills/anotes/SKILL.md
+mkdir -p ~/.codex/skills/anotes && cp "$(npm root -g)/anotes/skill/SKILL.md" ~/.codex/skills/anotes/SKILL.md
 ```
